@@ -1,0 +1,8 @@
+[user]
+	name = Pranav Sharma
+	email = pranav.sharma.ama@gmail.com
+[credential]
+	helper = /usr/libexec/git-core/git-credential-libsecret
+[merge]
+        tool = vimdiff
+        conflictstyle = diff3
