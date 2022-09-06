@@ -1,5 +1,5 @@
-{{ if eq .chezmoi.os "linux" -}}
 #!/bin/bash
+{{ if eq .chezmoi.osRelease.id "fedora" }}
 sudo dnf in age neovim python3-neovim mpv exercism
 echo "todo: rest"
-{{ end -}}
+{{ end }}
