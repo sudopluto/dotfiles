@@ -1,5 +1,18 @@
 #!/bin/bash
-{{ if eq .chezmoi.osRelease.id "fedora" }}
-sudo dnf in age neovim python3-neovim mpv exercism
-echo "todo: rest"
+{{ if eq .chezmoi.osRelease.id "arch" }}
+sudo pacman -S age neovim mpv bluez-plugins bluez-utils libva-utils gnome-shell-extension-appindicator noto-fonts-cjk bash-completion fwupd firefox
+
+sudo systemctl enable --now bluetooth.service
+
+flatpak install obs shotcut steam discord signal spotify gimp
+
+sudo fwupmgr update
+
+sudo pacman -S --needed git base-devel
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd -
+
+echo "todo: split with hardware: laptop powersavings, desktop graphics"
 {{ end }}
