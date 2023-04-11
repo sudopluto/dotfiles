@@ -44,6 +44,7 @@ export EDITOR=nvim
 #handy aliases
 alias git-upd='git add . && git commit -m "upd" && git push'
 alias sys-upd='yay -Syu && flatpak update && sudo fwupdmgr update'
+alias mpv-audio='mpv --no-video'
 alias yt-dlaudio='yt-dlp -f "bestaudio"'
 alias rip-mp3='mkdir mp3s && for f in *.opus; do ffmpeg -i "$f" -c:a libmp3lame "mp3s/${f%.webm}.mp3"; done'
 alias rip-aac='mkdir aacs && for f in *.opus; do ffmpeg -i "$f" -c:a aac "aacs/${f%.webm}.m4a"; done'

@@ -1,6 +1,6 @@
 #!/bin/bash
 {{ if eq .chezmoi.osRelease.id "arch" }}
-sudo pacman -S age neovim mpv bluez-plugins bluez-utils libva-utils gnome-shell-extension-appindicator noto-fonts-cjk bash-completion fwupd firefox
+sudo pacman -S age neovim mpv bluez-plugins bluez-utils libva-utils gnome-shell-extension-appindicator noto-fonts-cjk bash-completion fwupd firefox fragments
 
 sudo systemctl enable --now bluetooth.service
 
