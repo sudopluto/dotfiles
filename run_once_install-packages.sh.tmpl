@@ -1,4 +1,15 @@
 #!/bin/bash
+
+read -p "enter 'y' to continue, other to abort: " CONF
+
+if [[ "$CONF" == "y" ]]; then
+  echo 'continue'
+else
+  echo 'abort'
+  exit
+fi
+
+
 {{ if eq .chezmoi.osRelease.id "arch" }}
 sudo pacman -S age neovim mpv bluez-plugins bluez-utils libva-utils gnome-shell-extension-appindicator noto-fonts-cjk bash-completion fwupd firefox fragments dbus-broker
 
