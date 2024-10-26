@@ -14,3 +14,5 @@ set incsearch
 inoremap jk <Esc>
 " enable mouse bc ctl-w hurts sometimes
 set mouse=a
+" system clipboard
+set clipboard+=unnamedplus
