@@ -16,3 +16,7 @@ inoremap jk <Esc>
 set mouse=a
 " system clipboard
 set clipboard+=unnamedplus
+
+" rust support
+syntax enable
+filetype plugin indent on
