@@ -53,6 +53,7 @@ alias yt-dlaudio='yt-dlp -f "bestaudio"'
 alias rip-mp3='mkdir mp3s && for f in *.opus; do ffmpeg -i "$f" -c:a libmp3lame "mp3s/${f%.webm}.mp3"; done'
 alias rip-aac='mkdir aacs && for f in *.opus; do ffmpeg -i "$f" -c:a aac "aacs/${f%.webm}.m4a"; done'
 alias gdm-upd='sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/'
+alias zed='zeditor'
 
 #source ~/vulkansdk/1.3.224.1/setup-env.sh
 
