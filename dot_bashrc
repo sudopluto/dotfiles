@@ -42,11 +42,12 @@ alias vimdiff='nvim -d'
 export EDITOR=nvim
 
 #handy aliases
+alias open='xdg-open'
 alias sh-upd='. ~/.bashrc'
 alias git-upd='git add . && git commit -m "upd" && git push'
 alias git-cd='cd ~/git'
 alias sys-upd='yay -Syu ; flatpak update ; sudo fwupdmgr update ; sudo checkservices'
-alias sys-enc='sudo systemd-cryptenroll --tpm2-device=auto --wipe-slot=tpm2 /dev/nvme0n1p2'
+alias sys-enc='sudo systemd-cryptenroll --tpm2-device=auto --wipe-slot=tpm2 /dev/disk/by-label/root'
 alias sys-arm='sudo pacman -Qdttq | sudo pacman -Rs - ; flatpak uninstall --unused ; sudo pacman -S --needed gnome'
 alias mpv-audio='mpv --no-video'
 alias yt-dlaudio='yt-dlp -f "bestaudio"'
