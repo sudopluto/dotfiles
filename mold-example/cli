@@ -1,0 +1,3 @@
+gcc -fuse-ld=mold
+clang -fuse-ld=mold
+mold -run <cmd>
