@@ -7,6 +7,11 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "languages": {
+    "Markdown": {
+      "show_edit_predictions": false
+    }
+  },
   "features": {
     "edit_prediction_provider": "zed"
   },
