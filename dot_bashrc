@@ -54,7 +54,10 @@ alias sys-arm='sudo pacman -Qdttq | sudo pacman -Rs - ; flatpak uninstall --unus
 alias gdm-upd='sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/'
 
 # git aliases
-alias git-upd='git add . && git commit -m "upd" && git push'
+function git-upd() {
+    git add . git commit -m "$1" && git push
+}
+
 alias git-cd='cd ~/git'
 
 
