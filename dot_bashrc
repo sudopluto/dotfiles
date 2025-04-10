@@ -55,9 +55,8 @@ alias gdm-upd='sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/'
 
 # git aliases
 function git-upd() {
-    git add . git commit -m "$1" && git push
+    git add . && git commit -m "$1" && git push
 }
-
 alias git-cd='cd ~/git'
 
 
