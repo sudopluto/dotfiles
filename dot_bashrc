@@ -35,43 +35,42 @@ fi
 
 unset rc
 
-# modify some stuff
+# vim & zed aliases
 alias vim='nvim'
 alias vi="nvim"
 alias vimdiff='nvim -d'
+alias zed='zeditor'
 export EDITOR=nvim
 
-# handy aliases #
-## sys
+# system aliases
 alias open='xdg-open'
+alias sh-edit='vim ~/.bashrc && . ~/.bashrc'
 alias sh-upd='. ~/.bashrc'
-
 alias key-upd='sudo pacman-key --refresh-keys'
 alias mirror-upd='sudo systemctl start reflector.service'
-
 alias sys-upd='yay -Syu ; flatpak update ; sudo fwupdmgr update ; sudo checkservices'
 alias sys-enc='sudo systemd-cryptenroll --tpm2-device=auto --wipe-slot=tpm2 /dev/disk/by-label/root'
 alias sys-arm='sudo pacman -Qdttq | sudo pacman -Rs - ; flatpak uninstall --unused ; sudo pacman -S --needed gnome'
-
 alias gdm-upd='sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/'
 
-
-## git
+# git aliases
 alias git-upd='git add . && git commit -m "upd" && git push'
 alias git-cd='cd ~/git'
 
-## mpv
+
+# mpv and yt-dl aliases
 alias mpv-audio='mpv --no-video'
 alias yt-dlaudio='yt-dlp -f "bestaudio"'
 alias rip-mp3='mkdir mp3s && for f in *.opus; do ffmpeg -i "$f" -c:a libmp3lame "mp3s/${f%.webm}.mp3"; done'
 alias rip-aac='mkdir aacs && for f in *.opus; do ffmpeg -i "$f" -c:a aac "aacs/${f%.webm}.m4a"; done'
 
-## other
-alias zed='zeditor'
+# arch packaging aliases
+alias srcinfo-upd='makepkg --printsrcinfo > .SRCINFO'
+alias makepkg-clean='makepkg -Cfis'
+alias makepkg-rebuild='makepkg -is'
 
 # cachyos debuginfo url
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org https://debuginfod.cachyos.org https://debuginfod.elfutils.org/"
-
 
 #source ~/vulkansdk/1.3.224.1/setup-env.sh
 
