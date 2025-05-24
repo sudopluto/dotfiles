@@ -51,6 +51,7 @@ alias mirror-upd='sudo systemctl start reflector.service'
 alias sys-upd='yay -Syu ; flatpak update ; sudo fwupdmgr update ; sudo checkservices'
 alias sys-enc='sudo systemd-cryptenroll --tpm2-device=auto --wipe-slot=tpm2 /dev/disk/by-label/root'
 alias sys-arm='sudo pacman -Qdttq | sudo pacman -Rs - ; flatpak uninstall --unused ; sudo pacman -S --needed gnome'
+alias sys-bios='systemctl reboot --firmware-setup'
 alias gdm-upd='sudo cp ~/.config/monitors.xml /var/lib/gdm/.config/'
 
 # git aliases
