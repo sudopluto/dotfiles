@@ -49,8 +49,8 @@ alias sh-upd='. ~/.bashrc'
 alias key-upd='sudo pacman-key --refresh-keys'
 function mirror-upd() {
     sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup
-    rate-mirrors cachyos | sudo tee /etc/pacman.d/mirrorlist
-    rate-mirrors arch | sudo tee -a /etc/pacman.d/mirrorlist
+    rate-mirrors --per-mirror-timeout 600 --max-jumps 3 --country-test-mirrors-per-country 3 cachyos | sudo tee /etc/pacman.d/mirrorlist
+    rate-mirrors --per-mirror-timeout 600 --max-jumps 3 --country-test-mirrors-per-country 3 arch | sudo tee -a /etc/pacman.d/mirrorlist
 }
 alias sys-upd='yay -Syu ; flatpak update ; sudo fwupdmgr update ; sudo checkservices'
 alias sys-enc='sudo systemd-cryptenroll --tpm2-device=auto --wipe-slot=tpm2 /dev/disk/by-label/root'
