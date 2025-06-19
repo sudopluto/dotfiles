@@ -75,6 +75,30 @@ alias makepkg-rebuild='makepkg -is'
 # cachyos debuginfo url
 export DEBUGINFOD_URLS="https://debuginfod.archlinux.org https://debuginfod.cachyos.org https://debuginfod.elfutils.org/"
 
+# btrfs maintaince
+function btrfs-balance() {
+    echo "running on / ....."
+    sudo btrfs balance start -dusage=10 -musage=5 /
+    sudo btrfs balance start -dusage=50 -musage=30 /
+    sudo btrfs balance start -dusage=10 -musage=5 /
+    echo "done!"
+
+    if [[ $# -gt 0 ]]; then
+        if [[ $1 = "desktop" ]]; then
+            for fs in /home/pranav/tierone /home/pranav/tiertwo /home/pranav/tierfreeze; do
+                echo "running on $fs ..."
+                sudo btrfs balance start -dusage=10 -musage=5 $fs
+                sudo btrfs balance start -dusage=50 -musage=30 $fs
+                sudo btrfs balance start -dusage=10 -musage=5 $fs
+                echo "done!"
+            done
+        fi
+    fi
+}
+alias btrfs-usage="sudo btrfs filesystem usage /"
+alias snapper-clean="sudo snapper cleanup number"
+alias fstab-chk="sudo findmnt --verify --verbose"
+
 #source ~/vulkansdk/1.3.224.1/setup-env.sh
 
 #ruby
