@@ -13,7 +13,7 @@
       "proxy": null,
       "proxy_no_verify": null
     },
-    "enabled_in_assistant": false
+    "enabled_in_text_threads": false
   },
   "languages": {
     "Markdown": {
@@ -23,12 +23,11 @@
   "features": {
     "edit_prediction_provider": "zed"
   },
-  "assistant": {
+  "agent": {
     "default_model": {
       "provider": "ollama",
       "model": "qwen2.5-coder:3b"
-    },
-    "version": "2"
+    }
   },
   "vim_mode": true,
   "ui_font_size": 20,
