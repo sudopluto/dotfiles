@@ -25,8 +25,8 @@
   },
   "agent": {
     "default_model": {
-      "provider": "ollama",
-      "model": "qwen2.5-coder:3b"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     }
   },
   "vim_mode": true,
