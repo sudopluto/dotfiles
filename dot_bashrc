@@ -129,3 +129,6 @@ export CC="/usr/bin/clang"
 export CXX="/usr/bin/clang++"
 alias cmake-run-build="cmake -B build -S . -GNinja && cmake --build build"
 alias cmake-clean-build="rm -rf build && cmake -B build -S . -GNinja && cmake --build build"
+
+#snapd
+export PATH="/var/lib/snapd/snap/bin:$PATH" 
