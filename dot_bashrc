@@ -46,7 +46,7 @@ export EDITOR=nvim
 alias open='xdg-open'
 alias sh-edit='vim ~/.bashrc && . ~/.bashrc'
 alias sh-upd='. ~/.bashrc'
-alias key-upd='sudo pacman-key --refresh-keys'
+alias key-upd='sudo rm -rf /etc/pacman.d/gnupg.bak && sudo mv /etc/pacman.d/gnupg{,.bak} && sudo pacman-key --init && sudo pacman-key --populate && sudo pacman-key --lsign-key "CachyOS <admin@cachyos.org>"'
 alias mirror-upd='sudo cachyos-rate-mirrors'
 alias sys-upd='yay -Syu ; flatpak update ; sudo fwupdmgr update ; sudo checkservices'
 alias sys-enc='sudo systemd-cryptenroll --tpm2-device=auto --wipe-slot=tpm2 /dev/disk/by-label/root'

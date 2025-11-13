@@ -1,0 +1,19 @@
+{
+    "vim.useSystemClipboard": true,
+    "vim.vimrc.enable": true,
+    "vim.enableNeovim": true,
+    "clangd.checkUpdates": true,
+    "editor.fontFamily": "'source code pro'",
+    "editor.renderWhitespace": "all",
+    "extensions.ignoreRecommendations": true,
+    "terminal.integrated.fontFamily": "monospace",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "github.copilot.advanced": {},
+    "redhat.telemetry.enabled": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["j", "k"],
+            "after": ["<Esc>"]
+        }
+    ]
+}
