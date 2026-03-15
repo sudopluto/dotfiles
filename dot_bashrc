@@ -42,6 +42,9 @@ alias vimdiff='nvim -d'
 alias zed="WAYLAND_DISPLAY='' zeditor"
 export EDITOR=nvim
 
+# other tool aliases
+alias grep-dir="grep -rnw . -e "
+
 # system aliases
 alias open='xdg-open'
 alias sh-edit='vim ~/.bashrc && . ~/.bashrc'
@@ -97,10 +100,15 @@ function btrfs-balance() {
                 echo ""
             done
         else
-            echo "error: invalid arg: $1"
+            echo "running on $1 ..."
+            sudo btrfs balance start -dusage=10 -musage=5 $1
+            sudo btrfs balance start -dusage=50 -musage=30 $1
+            sudo btrfs balance start -dusage=10 -musage=5 $1
+            echo "done!"
+            echo ""
         fi
     else
-        echo "note: if on desktop, rerun as \$btrfs-balance desktop to balance other drives"
+        echo "note: if on desktop, rerun as \$ btrfs-balance desktop to balance other drives"
     fi
 }
 alias btrfs-usage="sudo btrfs filesystem usage /"
@@ -132,3 +140,9 @@ alias cmake-clean-build="rm -rf build && cmake -B build -S . -GNinja && cmake --
 
 #snapd
 export PATH="/var/lib/snapd/snap/bin:$PATH" 
+
+#podman
+export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
+alias docker="podman"
+alias docker-compose="podman-compose"
+source /usr/share/doc/pkgfile/command-not-found.bash

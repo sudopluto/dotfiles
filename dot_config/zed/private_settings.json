@@ -7,27 +7,30 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-  "edit_predictions": {
-    "mode": "subtle",
-    "copilot": {
-      "proxy": null,
-      "proxy_no_verify": null
-    },
-    "enabled_in_text_threads": false
-  },
-  "languages": {
-    "Markdown": {
-      "show_edit_predictions": false
-    }
-  },
-  "features": {
-    "edit_prediction_provider": "zed"
-  },
+  "show_edit_predictions": false,
   "agent": {
+    "favorite_models": [
+      {
+        "provider": "openrouter",
+        "model": "z-ai/glm-5",
+        "enable_thinking": true,
+      },
+      {
+        "provider": "openrouter",
+        "model": "minimax/minimax-m2.5",
+        "enable_thinking": true,
+      },
+      {
+        "provider": "openrouter",
+        "model": "moonshotai/kimi-k2.5",
+        "enable_thinking": true,
+      },
+    ],
     "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
-    }
+      "enable_thinking": true,
+      "provider": "openrouter",
+      "model": "moonshotai/kimi-k2.5",
+    },
   },
   "vim_mode": true,
   "ui_font_size": 20,
@@ -36,6 +39,6 @@
   "theme": {
     "mode": "system",
     "light": "One Light",
-    "dark": "Github Dark"
-  }
+    "dark": "Github Dark",
+  },
 }
