@@ -34,13 +34,13 @@ if [ -d ~/.bashrc.d ]; then
 fi
 
 unset rc
-
 # vim & zed aliases
 alias vim='nvim'
 alias vi="nvim"
 alias vimdiff='nvim -d'
 alias zed="WAYLAND_DISPLAY='' zeditor"
 export EDITOR=nvim
+export SYSTEMD_EDITOR=nvim
 
 # other tool aliases
 alias grep-dir="grep -rnw . -e "
@@ -145,4 +145,39 @@ export PATH="/var/lib/snapd/snap/bin:$PATH"
 export DOCKER_HOST=unix://$XDG_RUNTIME_DIR/podman/podman.sock
 alias docker="podman"
 alias docker-compose="podman-compose"
+
+#opencode / ai brain
+alias brain="cd ~/git/personalbrain/ && opencode . -c"
+alias brain-gemini="cd ~/git/personalbrain/ && gemini -m gemini-3.1-pro-preview ."
+
 source /usr/share/doc/pkgfile/command-not-found.bash
+###-begin-opencode-completions-###
+#
+# yargs command completion script
+#
+# Installation: opencode completion >> ~/.bashrc
+#    or opencode completion >> ~/.bash_profile on OSX.
+#
+_opencode_yargs_completions()
+{
+    local cur_word args type_list
+
+    cur_word="${COMP_WORDS[COMP_CWORD]}"
+    args=("${COMP_WORDS[@]}")
+
+    # ask yargs to generate completions.
+    # see https://stackoverflow.com/a/40944195/7080036 for the spaces-handling awk
+    mapfile -t type_list < <(opencode --get-yargs-completions "${args[@]}")
+    mapfile -t COMPREPLY < <(compgen -W "$( printf '%q ' "${type_list[@]}" )" -- "${cur_word}" |
+        awk '/ / { print "\""$0"\"" } /^[^ ]+$/ { print $0 }')
+
+    # if no match was found, fall back to filename completion
+    if [ ${#COMPREPLY[@]} -eq 0 ]; then
+      COMPREPLY=()
+    fi
+
+    return 0
+}
+complete -o bashdefault -o default -F _opencode_yargs_completions opencode
+###-end-opencode-completions-###
+

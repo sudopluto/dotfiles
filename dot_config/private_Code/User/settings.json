@@ -1,35 +1,36 @@
 {
-    "vim.useSystemClipboard": true,
-    "vim.vimrc.enable": true,
-    "vim.enableNeovim": true,
-    "clangd.checkUpdates": true,
-    "editor.fontFamily": "Cascadia Code",
-    "editor.fontSize": 16,
-    "editor.renderWhitespace": "all",
-    "extensions.ignoreRecommendations": true,
-    "terminal.integrated.fontFamily": "Cascadia Code",
-    "diffEditor.ignoreTrimWhitespace": false,
-    "redhat.telemetry.enabled": true,
-    "vim.normalModeKeyBindings": [
-        {
-            "before": [
-                "j",
-                "k"
-            ],
-            "after": [
-                "<Esc>"
-            ]
-        }
-    ],
-    "editor.inlineSuggest.enabled": false,
-    "chat.viewSessions.orientation": "stacked",
-    "chat.tools.urls.autoApprove": {
-        "https://www.google.com": true
-    },
-    "inlineChat.defaultModel": "MoonshotAI: Kimi K2.5 (openrouter)",
-    "diffEditor.codeLens": true,
-    "git.autofetch": true,
-    "chat.planAgent.defaultModel": "MoonshotAI: Kimi K2.5 (openrouter)",
-    "github.copilot.chat.responsesApiReasoningEffort": "high",
-    "github.copilot.chat.responsesApiContextManagement.enabled": true
+  "vim.useSystemClipboard": true,
+  "vim.vimrc.enable": true,
+  "vim.enableNeovim": true,
+  "clangd.checkUpdates": true,
+  "editor.fontFamily": "Cascadia Code",
+  "editor.fontSize": 16,
+  "editor.renderWhitespace": "all",
+  "extensions.ignoreRecommendations": true,
+  "terminal.integrated.fontFamily": "Cascadia Code",
+  "diffEditor.ignoreTrimWhitespace": false,
+  "redhat.telemetry.enabled": true,
+  "vim.normalModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "editor.inlineSuggest.enabled": false,
+  "chat.viewSessions.orientation": "stacked",
+  "chat.tools.urls.autoApprove": {
+    "https://www.google.com": true
+  },
+  "inlineChat.defaultModel": "MoonshotAI: Kimi K2.5 (openrouter)",
+  "diffEditor.codeLens": true,
+  "git.autofetch": true,
+  "chat.planAgent.defaultModel": "MoonshotAI: Kimi K2.5 (openrouter)",
+  "github.copilot.chat.responsesApiReasoningEffort": "high",
+  "github.copilot.chat.responsesApiContextManagement.enabled": true,
+  "workbench.colorCustomizations": null
 }
